@@ -1,0 +1,18 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.meu_carro_minha_vida;
+
+/**
+ *
+ * @author leandro
+ */
+public class App {
+
+    public static void main(String[] args) {
+        
+        ConexaoBD conexao = ConexaoBD.getInstance();
+        
+    }
+}
