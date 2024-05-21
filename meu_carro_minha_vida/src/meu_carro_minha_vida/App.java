@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.meu_carro_minha_vida;
+package meu_carro_minha_vida;
 
 /**
  *
