@@ -77,7 +77,7 @@ public class ConexaoBD {
         return resultSet;
     }
 
-    public void fecharConexao() {
+    public void closeConDB() {
         if (connection != null) {
             try {
                 connection.close();
@@ -89,4 +89,3 @@ public class ConexaoBD {
         }
     }
 }
-
