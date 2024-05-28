@@ -4,6 +4,8 @@
  */
 package meu_carro_minha_vida;
 
+import javax.swing.plaf.DimensionUIResource;
+
 /**
  *
  * @author leandro
@@ -15,6 +17,11 @@ public class TelaCadastroUser extends javax.swing.JFrame {
      * Creates new form TelaLogin
      */
     public TelaCadastroUser() {
+        setTitle("CADASTRO");
+        setResizable(false);
+        setPreferredSize(new DimensionUIResource(790, 450));
+        setMinimumSize(new DimensionUIResource(790, 450));
+        setMaximumSize(new DimensionUIResource(790, 450));
         initComponents();
     }
 
@@ -258,9 +265,9 @@ public class TelaCadastroUser extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                TelaCadastroUser telalogin = new TelaCadastroUser();
-                telalogin.setResizable(false);
-                telalogin.setVisible(true);
+                TelaCadastroUser telaCadastroUser = new TelaCadastroUser();
+                telaCadastroUser.setVisible(true);
+                
                 
             }
         });

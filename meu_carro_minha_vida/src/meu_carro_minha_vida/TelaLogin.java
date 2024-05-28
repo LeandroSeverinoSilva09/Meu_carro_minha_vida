@@ -4,6 +4,8 @@
  */
 package meu_carro_minha_vida;
 
+import javax.swing.plaf.DimensionUIResource;
+
 /**
  *
  * @author leandro
@@ -15,6 +17,11 @@ public class TelaLogin extends javax.swing.JFrame {
      * Creates new form TelaLogin
      */
     public TelaLogin() {
+        setTitle("LOGIN");
+        setResizable(false);
+        setPreferredSize(new DimensionUIResource(790, 450));
+        setMinimumSize(new DimensionUIResource(790, 450));
+        setMaximumSize(new DimensionUIResource(790, 450));
         initComponents();
     }
 
@@ -172,7 +179,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         TelaCadastroUser telaCadastroUser = new TelaCadastroUser();
         telaCadastroUser.setVisible(true);
-        
+                
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -206,7 +213,6 @@ public class TelaLogin extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 TelaLogin telalogin = new TelaLogin();
-                telalogin.setResizable(false);
                 telalogin.setVisible(true);
                 
             }
