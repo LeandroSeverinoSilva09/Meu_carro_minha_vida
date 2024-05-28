@@ -1,6 +1,6 @@
 package meu_carro_minha_vida;
 
-public class loginDAO {
+public class UserDao {
     ConexaoBD conexao = ConexaoBD.getInstance();
 
     public void cadastarUsuario(String nome, int idade, String cidade, String login, String senha) {
