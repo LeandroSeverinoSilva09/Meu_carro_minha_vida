@@ -23,6 +23,7 @@ public class TelaCadastroUser extends javax.swing.JFrame {
         setMinimumSize(new DimensionUIResource(840, 500));
         setMaximumSize(new DimensionUIResource(840, 500));
         initComponents();
+        
     }
 
     /**
@@ -206,27 +207,51 @@ public class TelaCadastroUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String loginuser = jTextField1.getText();
+            String nomeuser = jTextField2.getText();   
+            String idadeSuser = jTextField3.getText();
+            int idadeuser = 0;
+
+            try {
+                idadeuser = Integer.parseInt(idadeSuser);          
+            } catch (Exception e) {
+                System.out.println("Erro: " + e);
+                // TODO: handle exception
+            }
+
+            String cidadeuser = jTextField4.getText();
+            String senhauser = jTextField5.getText();
+            UserDao userDao = new UserDao();
+            userDao.cadastarUsuario(nomeuser, idadeuser, cidadeuser, loginuser, senhauser);
+            this.dispose();
+                
+        } catch (Exception e) {
+            System.out.println("Erro:" + e);
+            // TODO: handle exception
+        }
+        
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     /**
