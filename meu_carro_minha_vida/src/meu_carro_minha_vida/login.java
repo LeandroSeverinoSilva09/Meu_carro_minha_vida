@@ -8,7 +8,7 @@ package meu_carro_minha_vida;
  *
  * @author Leandro
  */
-public class login {
+public class Login {
 
     private String nome;
     private int idade;
@@ -24,7 +24,7 @@ public class login {
         this.senha = senha;
     }
 
-    public login(String login, String senha) {
+    public Login(String login, String senha) {
         this.login = login;
         this.senha = senha;
     }

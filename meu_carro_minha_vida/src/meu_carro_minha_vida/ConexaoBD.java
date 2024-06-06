@@ -18,7 +18,7 @@ import java.sql.Statement;
 public class ConexaoBD {
     private static ConexaoBD instance;
     private Connection connection;
-    private String url = "jdbc:mysql://localhost:3306/MCMvida";
+    private String url = "jdbc:mysql://localhost:3306/meucarro";
     private String user = "root";
     private String password = "Leandro@123";
 
