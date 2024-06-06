@@ -1,5 +1,8 @@
 package meu_carro_minha_vida;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class UserDao {
     ConexaoBD conexao = ConexaoBD.getInstance();
 
@@ -10,5 +13,4 @@ public class UserDao {
         conexao.closeConDB();
 
     }
-
 }
