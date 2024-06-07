@@ -19,7 +19,7 @@ public class UserDao {
         String sql = "INSERT INTO usuarios (nome, idade, cidade, login, senha) VALUES ('" + nome + "', " + idade + ", '"
                 + cidade + "', '" + login + "', '" + senha + "');";
         conexao.executarSQL(sql);
-        conexao.closeConDB();
+        // conexao.closeConDB();
 
     }
 
@@ -28,10 +28,10 @@ public class UserDao {
         ResultSet resultado = null;
         resultado = conexao.executarConsulta(sql);
         if (resultado.next()) {
-            conexao.closeConDB();
+            // conexao.closeConDB();
             return true;
         } else {
-            conexao.closeConDB();
+            // conexao.closeConDB();
             return false;
         }
 

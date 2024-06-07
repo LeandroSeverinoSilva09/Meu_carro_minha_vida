@@ -4,6 +4,7 @@
  */
 package meu_carro_minha_vida;
 
+import javax.swing.JOptionPane;
 import javax.swing.plaf.DimensionUIResource;
 
 /**
@@ -208,9 +209,18 @@ public class TelaLogin extends javax.swing.JFrame {
         if (acesso) {
             System.out.println("acesso liberado");
             TelaSelecao telaSelecao = new TelaSelecao();
-            this.dispose();
+            telaSelecao.setVisible(true);
+            // this.dispose();
         } else {
             System.out.println("Acesso negado");
+            JOptionPane.showMessageDialog(null, "Suas credenciais estão incorretas!", "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+            try {
+                acesso = userDao.login(login, senha);
+            } catch (Exception e) {
+                System.out.println("Erro no login: " + e.getMessage());
+            }
+
         }
     }// GEN-LAST:event_jButton1ActionPerformed
 
