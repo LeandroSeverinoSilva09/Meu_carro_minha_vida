@@ -11,8 +11,6 @@ package meu_carro_minha_vida;
 public class App {
 
     public static void main(String[] args) {
-        
-        ConexaoBD conexao = ConexaoBD.getInstance();
-        
+
     }
 }

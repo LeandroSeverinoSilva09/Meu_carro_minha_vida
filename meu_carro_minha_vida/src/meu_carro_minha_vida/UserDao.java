@@ -13,37 +13,31 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDao {
-    
+    ConexaoBD conexao = ConexaoBD.getInstance();
+
     public void cadastarUsuario(String nome, int idade, String cidade, String login, String senha) {
-        ConexaoBD conexao = ConexaoBD.getInstance();
         String sql = "INSERT INTO usuarios (nome, idade, cidade, login, senha) VALUES ('" + nome + "', " + idade + ", '"
                 + cidade + "', '" + login + "', '" + senha + "');";
         conexao.executarSQL(sql);
-        conexao.closeConDB();
 
     }
 
     public boolean login(String login, String senha) throws SQLException {
-        ConexaoBD conexao = ConexaoBD.getInstance();
         String sql = "SELECT login, senha FROM usuarios WHERE login = '" + login + "' and senha = '" + senha + "';";
         ResultSet resultado = null;
         resultado = conexao.executarConsulta(sql);
         if (resultado.next()) {
-            conexao.closeConDB();
             return true;
         } else {
-            conexao.closeConDB();
             return false;
         }
 
     }
 
-    public ResultSet dadosUsuario(String login){
-        ConexaoBD conexao = ConexaoBD.getInstance();
-        String sql = "SELECT * FROM usuarios WHERE login = '"+login+"';";
+    public ResultSet dadosUsuario(String login) {
+        String sql = "SELECT * FROM usuarios WHERE login = '" + login + "';";
         ResultSet resultado = null;
         resultado = conexao.executarConsulta(sql);
-        conexao.closeConDB();
         return resultado;
     }
 }

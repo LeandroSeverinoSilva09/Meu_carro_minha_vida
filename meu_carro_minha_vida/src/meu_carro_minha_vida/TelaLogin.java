@@ -217,11 +217,6 @@ public class TelaLogin extends javax.swing.JFrame {
             System.out.println("Acesso negado");
             JOptionPane.showMessageDialog(null, "Suas credenciais estão incorretas!", "Erro",
                     JOptionPane.ERROR_MESSAGE);
-            try {
-                acesso = userDao.login(login, senha);
-            } catch (Exception e) {
-                System.out.println("Erro no login: " + e.getMessage());
-            }
 
         }
     }// GEN-LAST:event_jButton1ActionPerformed
