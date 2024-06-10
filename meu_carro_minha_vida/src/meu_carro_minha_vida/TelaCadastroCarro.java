@@ -4,8 +4,6 @@
  */
 package meu_carro_minha_vida;
 
-import meu_carro_minha_vida.CarroDao;
-import meu_carro_minha_vida.cadastrocarro;
 
 import javax.swing.plaf.DimensionUIResource;
 
