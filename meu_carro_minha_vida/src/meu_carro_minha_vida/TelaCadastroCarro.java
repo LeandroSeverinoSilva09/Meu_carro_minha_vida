@@ -6,6 +6,8 @@ package meu_carro_minha_vida;
 
 import javax.swing.plaf.DimensionUIResource;
 
+import dao.CarroDao;
+
 /**
  *
  * @author G-fire
@@ -287,8 +289,18 @@ public class TelaCadastroCarro extends javax.swing.JFrame {
     }// GEN-LAST:event_jTextField7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_jButton4ActionPerformed
+        
+        String fabricante = jTextField6.getText();
+        String modelo = jTextField2.getText();
+        int kmNoPainel = Integer.parseInt(jTextField3.getText()); //TODO: Mudar o nome dos componentes do form, para usar nomes mais significativos
+        float tabelaFipe = Float.parseFloat(jTextField4.getText());
+        int anoVeiculo = Integer.parseInt(jTextField5.getText());
+        String placa = jTextField7.getText();
+    
+        CarroDao carroDao = new CarroDao();
+        carroDao.carro(fabricante, modelo, anoVeiculo, tabelaFipe, kmNoPainel, placa);
+    
+    }
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:

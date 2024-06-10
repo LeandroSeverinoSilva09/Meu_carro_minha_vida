@@ -1,4 +1,6 @@
-package meu_carro_minha_vida;
+package dao;
+
+import conexao.ConexaoBD;
 
 public class UserDao {
     ConexaoBD conexao = ConexaoBD.getInstance();

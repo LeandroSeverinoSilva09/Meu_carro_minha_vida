@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "meu_carro_minha_vida/meu_carro_minha_vida/build/classes/meu_carro_minha_vida/lib/mysql-connector-j-8.3.0.jar"
+    ]
+}

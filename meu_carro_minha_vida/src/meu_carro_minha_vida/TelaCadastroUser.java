@@ -6,6 +6,8 @@ package meu_carro_minha_vida;
 
 import javax.swing.plaf.DimensionUIResource;
 
+import dao.UserDao;
+
 /**
  *
  * @author leandro

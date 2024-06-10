@@ -3,7 +3,7 @@
  */
 
 package meu_carro_minha_vida;
-
+import conexao.ConexaoBD;
 /**
  *
  * @author leandro
@@ -12,7 +12,7 @@ public class App {
 
     public static void main(String[] args) {
         
-        ConexaoBD conexao = ConexaoBD.getInstance();
+        var conexao = ConexaoBD.getInstance();
         
     }
 }
