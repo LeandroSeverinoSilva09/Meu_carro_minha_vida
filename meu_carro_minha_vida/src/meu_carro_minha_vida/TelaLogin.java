@@ -208,8 +208,10 @@ public class TelaLogin extends javax.swing.JFrame {
 
         if (acesso) {
             System.out.println("acesso liberado");
+            this.dispose();
             TelaSelecao telaSelecao = new TelaSelecao();
             telaSelecao.setVisible(true);
+
             // this.dispose();
         } else {
             System.out.println("Acesso negado");
