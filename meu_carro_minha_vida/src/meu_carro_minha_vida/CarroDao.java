@@ -1,42 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package meu_carro_minha_vida;
 
-import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
+/**
+ *
+ * @author Pedro
+ */
 
 public class CarroDao {
     ConexaoBD conexao = ConexaoBD.getInstance();
 
-    public void cadastrocarro(cadastrocarro cadastrocarro) {
-        String sql = "INSERT INTO CARRO (MARCA, MODELO, KM_NO_PAINEL, TABELA_FIPE, ANO, PLACA) VALUES (?, ?, ?, ?, ?, ?)";
-        PreparedStatement stmt = null;
+    public void cadastroCarro(String marca, String modelo, int kmRodado, float valorFipe, int ano, String placa) {
+        String sql = "INSERT INTO veiculo (marca, modelo, km_rodado, valor_fipe, ano_veiculo, placa) VALUES ('" + marca
+                + "', '" + modelo + "', '" + kmRodado + "', '" + valorFipe + "', '" + ano + "', '" + placa + "');";
+        conexao.executarSQL(sql);
 
-        try {
-            stmt = conexao.getConnection().prepareStatement(sql);
-
-            stmt.setString(1, cadastrocarro.getMarca());
-            stmt.setString(2, cadastrocarro.getModelo());
-            stmt.setInt(3, cadastrocarro.getKmnoPainel());
-            stmt.setFloat(4, cadastrocarro.getTabelaFipe());
-            stmt.setInt(5, cadastrocarro.getAnodoveiculo());
-            stmt.setString(6, cadastrocarro.getPlaca());
-
-            // Executa a instrução SQL
-            stmt.executeUpdate();
-            System.out.println("Carro cadastrado com sucesso!");
-
-        } catch (SQLException e) {
-            System.err.println("Erro ao cadastrar carro: " + e.getMessage());
-            e.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null) {
-                    stmt.close();
-                }
-
-            } catch (SQLException e) {
-                System.err.println("Erro ao fechar recursos: " + e.getMessage());
-                e.printStackTrace();
-            }
-        }
     }
+
+    public boolean verificarplaca(String placa) throws SQLException {
+        String sql = "SELECT placa FROM veiculo WHERE placa = '" + placa + "';";
+        ResultSet resultado = null;
+        resultado = conexao.executarConsulta(sql);
+        if (resultado.next()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 }
