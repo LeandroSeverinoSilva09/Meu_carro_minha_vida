@@ -11,6 +11,8 @@ package meu_carro_minha_vida;
 public class App {
 
     public static void main(String[] args) {
+        TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
 
     }
 }
