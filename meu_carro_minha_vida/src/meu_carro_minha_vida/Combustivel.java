@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package meu_carro_minha_vida;
-
 
 /**
  *
@@ -15,7 +10,17 @@ public class Combustivel {
     private double resultado;
     private double quantidadeAbastecida;
     private double distanciaPercorrida;
-    
+    private double valorAbastecido;
+    private int diasCarroMes;
+
+    public double getValorAbastecido() {
+        return valorAbastecido;
+    }
+
+    public void setValorAbastecido(double valorAbastecido) {
+        this.valorAbastecido = valorAbastecido;
+    }
+
     public double getDistanciaPercorrida() {
         return distanciaPercorrida;
     }
@@ -56,32 +61,39 @@ public class Combustivel {
         this.resultado = resultado;
     }
 
+    public int getDiasCarroMes() {
+        return diasCarroMes;
+    }
 
-    public double CalcularAutonomia(){
+    public void setDiasCarroMes(int diasCarroMes) {
+        this.diasCarroMes = diasCarroMes;
+    }
+
+    public double CalcularAutonomia() {
         double autonomia = distanciaPercorrida / quantidadeAbastecida;
         return autonomia;
     }
 
-    public String ViabilidadeEconomica(){
-        double relacao = getValorAlcool()/getValorGasolina();
+    public String ViabilidadeEconomica() {
+        double relacao = getValorAlcool() / getValorGasolina();
 
         if (relacao <= 0.70) {
             return "ALCOOL";
-        } else if (relacao > 0.70){
+        } else if (relacao > 0.70) {
             return "GASOLINA";
-        }
-        else{
+        } else {
             return "ERRO";
         }
     }
 
-    
+    public double GastoMensal() {
+        double custoPorKmGasolina = getValorGasolina() / CalcularAutonomia();
+        double custoPorKmAlcool = getValorAlcool() / CalcularAutonomia();
+        double gastoMensalGasolina = custoPorKmGasolina * distanciaPercorrida * diasCarroMes;
+        double gastoMensalAlcool = custoPorKmAlcool * distanciaPercorrida * diasCarroMes;
+        
+        // Aqui você pode escolher retornar um dos valores ou ambos. 
+        // No caso, vou retornar a soma dos dois gastos mensais.
+        return gastoMensalGasolina + gastoMensalAlcool;
+    }
 }
-/*      double autonomia = CalcularAutonomia();
-        double custoPorKmGasolina = getValorGasolina() / autonomia;
-        double custoPorKmAlcool = getValorAlcool() / autonomia;
-
-        System.out.println("Custo por km com gasolina: R$ " + custoPorKmGasolina);
-        System.out.println("Custo por km com alcool: R$ " + custoPorKmAlcool);
- */
-
