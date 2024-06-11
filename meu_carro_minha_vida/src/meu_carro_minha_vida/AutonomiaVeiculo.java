@@ -6,7 +6,7 @@ package meu_carro_minha_vida;
 
 /**
  *
- * @author Leandro
+ * @author Vinicius
  */
 public class AutonomiaVeiculo extends javax.swing.JFrame {
 
