@@ -7,7 +7,7 @@ package meu_carro_minha_vida;
 
 /**
  *
- * @author lefae
+ * @author Vinicius
  */
 public class Combustivel {
     private double valorAlcool;
