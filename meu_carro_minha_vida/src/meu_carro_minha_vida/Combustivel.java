@@ -77,11 +77,3 @@ public class Combustivel {
 
     
 }
-/*      double autonomia = CalcularAutonomia();
-        double custoPorKmGasolina = getValorGasolina() / autonomia;
-        double custoPorKmAlcool = getValorAlcool() / autonomia;
-
-        System.out.println("Custo por km com gasolina: R$ " + custoPorKmGasolina);
-        System.out.println("Custo por km com alcool: R$ " + custoPorKmAlcool);
- */
-
