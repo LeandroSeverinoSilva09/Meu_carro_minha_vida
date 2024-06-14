@@ -36,27 +36,36 @@ public class UserDao {
     }
 
     public ArrayList<String> dadosUsuario(String login) {
-        String sql = "SELECT nome, idade, cidade FROM usuarios WHERE login = '" + login + "';";
+        String sql = "SELECT id, nome, idade, cidade FROM usuarios WHERE login = '" + login + "';";
         ResultSet result = null;
-        result = conexao.executarConsulta(sql);
-
+        int id = 0;
         String nome = "";
         int idade = 0;
         String cidade = "";
-
-        try {
-            nome = result.getString("nome");
-            idade = result.getInt("idade");
-            cidade = result.getString("cidade");
-        } catch (Exception e) {
-            System.out.println("Erro" + e.getMessage());
+        try{
+            result = conexao.executarConsulta(sql);
+            if (result.next()){
+                try {
+                id = result.getInt("id");
+                nome = result.getString("nome");
+                idade = result.getInt("idade");
+                cidade = result.getString("cidade");
+                } catch (Exception e) {
+                System.out.println("Erro" + e.getMessage());
+                }
+            }else{
+            System.out.println("erro");
+            }
+        }catch (Exception e ){
+            System.out.println("Erro "+ e.getMessage());
         }
-
         ArrayList<String> resultado = new ArrayList<>();
+        resultado.add(Integer.toString(id));
         resultado.add(nome);
         resultado.add(Integer.toString(idade));
         resultado.add(cidade);
 
         return resultado;
     }
+    
 }

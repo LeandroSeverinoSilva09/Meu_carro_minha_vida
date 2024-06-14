@@ -56,7 +56,6 @@ public class TelaSelecao extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(153, 217, 234));
-        setPreferredSize(new java.awt.Dimension(840, 500));
 
         jPanel1.setBackground(new java.awt.Color(153, 217, 234));
 

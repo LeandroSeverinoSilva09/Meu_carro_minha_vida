@@ -18,8 +18,8 @@ public class CarroDao {
     ConexaoBD conexao = ConexaoBD.getInstance();
 
     public void cadastroCarro(String marca, String modelo, int kmRodado, float valorFipe, int ano, String placa) {
-        String sql = "INSERT INTO veiculo (marca, modelo, km_rodado, valor_fipe, ano_veiculo, placa) VALUES ('" + marca
-                + "', '" + modelo + "', '" + kmRodado + "', '" + valorFipe + "', '" + ano + "', '" + placa + "');";
+        String sql = "INSERT INTO veiculo (marca, modelo, km_rodado, valor_fipe, ano_veiculo, placa, id_user) VALUES ('" + marca
+                + "', '" + modelo + "', '" + kmRodado + "', '" + valorFipe + "', '" + ano + "', '" + placa + "', '"+Dados.getIdUser()+"');";
         conexao.executarSQL(sql);
 
     }
@@ -40,22 +40,30 @@ public class CarroDao {
         String sql = "SELECT marca, modelo, km_rodado, valor_fipe, ano_veiculo, placa FROM veiculo WHERE placa = '"
                 + placa + "';";
         ResultSet result = null;
-        result = conexao.executarConsulta(sql);
+
         String marca = "";
         String modelo = "";
         int km_rodado = 0;
         int valorFipe = 0;
         int ano = 0;
         String placaBD = "";
-        try {
-            marca = result.getString("marca");
-            modelo = result.getString("modelo");
-            km_rodado = result.getInt("km_rodado");
-            valorFipe = result.getInt("valor_fipe");
-            ano = result.getInt("ano");
-            placaBD = result.getString("placa");
-        } catch (Exception e) {
-            System.out.println("Erro" + e.getMessage());
+
+        try{
+            result = conexao.executarConsulta(sql);
+            if (result.next()){
+                try {
+                    marca = result.getString("marca");
+                    modelo = result.getString("modelo");
+                    km_rodado = result.getInt("km_rodado");
+                    valorFipe = result.getInt("valor_fipe");
+                    ano = result.getInt("ano_veiculo");
+                    placaBD = result.getString("placa");
+                } catch (Exception e) {
+                    System.out.println("Erro" + e.getMessage());
+                }
+            }
+        } catch (Exception e ){
+            System.out.println("Erro " + e.getMessage());
         }
 
         ArrayList<String> resultado = new ArrayList<>();

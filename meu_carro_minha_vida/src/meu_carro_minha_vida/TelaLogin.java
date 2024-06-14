@@ -218,6 +218,16 @@ public class TelaLogin extends javax.swing.JFrame {
         }
 
         if (acesso) {
+            try{
+            String idUser = userDao.dadosUsuario(login).get(0);
+            System.out.println(idUser);
+            int id = Integer.parseInt(idUser);
+            Dados.setIdUser(id);
+            } catch(Exception e ){
+                JOptionPane.showMessageDialog(null, "Erro ao carregar dados" + e.getMessage(), "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+            }
+
             System.out.println("Acesso liberado");
             this.dispose();
             TelaCarroLogin telaCarroLogin = new TelaCarroLogin();

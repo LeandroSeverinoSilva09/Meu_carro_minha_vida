@@ -212,6 +212,7 @@ public class TelaCarroLogin extends javax.swing.JFrame {
 
                 if (acesso) {
                         System.out.println("Carro Existente");
+                        Dados.setPlacaVeiculo(placa);
                         this.dispose();
                         TelaSelecao telaSelecao = new TelaSelecao();
                         telaSelecao.setVisible(true);
