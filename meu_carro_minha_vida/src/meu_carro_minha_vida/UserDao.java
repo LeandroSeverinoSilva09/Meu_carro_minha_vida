@@ -11,6 +11,7 @@ package meu_carro_minha_vida;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UserDao {
     ConexaoBD conexao = ConexaoBD.getInstance();
@@ -34,10 +35,28 @@ public class UserDao {
 
     }
 
-    public ResultSet dadosUsuario(String login) {
-        String sql = "SELECT * FROM usuarios WHERE login = '" + login + "';";
-        ResultSet resultado = null;
-        resultado = conexao.executarConsulta(sql);
+    public ArrayList<String> dadosUsuario(String login) {
+        String sql = "SELECT nome, idade, cidade FROM usuarios WHERE login = '" + login + "';";
+        ResultSet result = null;
+        result = conexao.executarConsulta(sql);
+
+        String nome = "";
+        int idade = 0;
+        String cidade = "";
+
+        try {
+            nome = result.getString("nome");
+            idade = result.getInt("idade");
+            cidade = result.getString("cidade");
+        } catch (Exception e) {
+            System.out.println("Erro" + e.getMessage());
+        }
+
+        ArrayList<String> resultado = new ArrayList<>();
+        resultado.add(nome);
+        resultado.add(Integer.toString(idade));
+        resultado.add(cidade);
+
         return resultado;
     }
 }

@@ -6,6 +6,8 @@ package meu_carro_minha_vida;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -32,6 +34,39 @@ public class CarroDao {
             return false;
         }
 
+    }
+
+    public ArrayList<String> dadosVeiculo(String placa) {
+        String sql = "SELECT marca, modelo, km_rodado, valor_fipe, ano_veiculo, placa FROM veiculo WHERE placa = '"
+                + placa + "';";
+        ResultSet result = null;
+        result = conexao.executarConsulta(sql);
+        String marca = "";
+        String modelo = "";
+        int km_rodado = 0;
+        int valorFipe = 0;
+        int ano = 0;
+        String placaBD = "";
+        try {
+            marca = result.getString("marca");
+            modelo = result.getString("modelo");
+            km_rodado = result.getInt("km_rodado");
+            valorFipe = result.getInt("valor_fipe");
+            ano = result.getInt("ano");
+            placaBD = result.getString("placa");
+        } catch (Exception e) {
+            System.out.println("Erro" + e.getMessage());
+        }
+
+        ArrayList<String> resultado = new ArrayList<>();
+        resultado.add(marca);
+        resultado.add(modelo);
+        resultado.add(Integer.toString(km_rodado));
+        resultado.add(Integer.toString(valorFipe));
+        resultado.add(Integer.toString(ano));
+        resultado.add(placaBD);
+
+        return resultado;
     }
 
 }
