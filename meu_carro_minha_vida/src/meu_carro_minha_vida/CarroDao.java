@@ -25,7 +25,7 @@ public class CarroDao {
     }
 
     public boolean verificarplaca(String placa) throws SQLException {
-        String sql = "SELECT placa FROM veiculo WHERE placa = '" + placa + "';";
+        String sql = "SELECT placa FROM veiculo WHERE placa = '" + placa + "' and id_user = "+Dados.getIdUser()+";";
         ResultSet resultado = null;
         resultado = conexao.executarConsulta(sql);
         if (resultado.next()) {
