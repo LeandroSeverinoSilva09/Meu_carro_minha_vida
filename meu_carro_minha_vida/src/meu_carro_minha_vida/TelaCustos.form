@@ -176,7 +176,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Qual &#xe9; o valor do combustiv&#xe9;l que voc&#xea; vai abastecer?"/>
+            <Property name="text" type="java.lang.String" value="Qual &#xe9; o valor do combust&#xed;vel que voc&#xea; vai abastecer?"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">

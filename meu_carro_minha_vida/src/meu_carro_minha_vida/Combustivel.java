@@ -34,9 +34,9 @@ public class Combustivel {
         double relacao = getValorAlcool() / getValorGasolina();
 
         if (relacao <= 0.70) {
-            return "Está valendo mais apena abastecer com ALCOOL.";
+            return "Abastecer com ÁLCOOL";
         } else if (relacao > 0.70) {
-            return "Está valendo mais apena abastecer com GASOLINA.";
+            return "Abastecer com GASOLINA.";
         } else {
             return "ERRO";
         }

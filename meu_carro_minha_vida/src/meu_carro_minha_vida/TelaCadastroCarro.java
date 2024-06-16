@@ -4,6 +4,7 @@
  */
 package meu_carro_minha_vida;
 
+import javax.swing.JOptionPane;
 import javax.swing.plaf.DimensionUIResource;
 
 /**
@@ -321,6 +322,7 @@ public class TelaCadastroCarro extends javax.swing.JFrame {
                 tabelaFipe = Float.parseFloat(tabelaFipes);
 
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Digite Valores válidos","Erro", JOptionPane.ERROR_MESSAGE);
                 System.out.println("Erro: " + e.getMessage());
                 // TODO: handle exception
             }
@@ -335,6 +337,7 @@ public class TelaCadastroCarro extends javax.swing.JFrame {
     }// GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton5ActionPerformed
+        this.dispose();
         // TODO add your handling code here:
     }// GEN-LAST:event_jButton5ActionPerformed
 
