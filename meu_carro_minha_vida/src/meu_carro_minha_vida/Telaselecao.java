@@ -8,7 +8,7 @@ import javax.swing.plaf.DimensionUIResource;
 
 /**
  *
- * @author Usua
+ * @author João
  */
 public class TelaSelecao extends javax.swing.JFrame {
 
@@ -60,7 +60,7 @@ public class TelaSelecao extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 217, 234));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel4.setText("O QUE DESEJA CALCULAR?");
+        jLabel4.setText("O QUE DESEJA VISUALIZAR");
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/meu_carro_minha_vida/imagens/mecanico.png"))); // NOI18N
 

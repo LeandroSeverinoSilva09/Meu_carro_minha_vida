@@ -63,7 +63,7 @@ public class TelaCadastroUser extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(153, 217, 234));
         jPanel2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel2.setFont(new java.awt.Font("Montserrat Black", 0, 24)); // NOI18N
         jLabel2.setText("Novo Usuário");
