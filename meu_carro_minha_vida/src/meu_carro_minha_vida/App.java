@@ -5,8 +5,9 @@
 package meu_carro_minha_vida;
 
 /**
- *
- * @author leandro
+ * Classe principal do programa, abre a tela inicial de login
+ * 
+ * @author Leandro
  */
 public class App {
 

@@ -5,8 +5,9 @@
 package meu_carro_minha_vida;
 
 /**
- *
- * @author leandro
+ * Classe que serve para conectar os dados do usuário ao banco de dados, afza cadastro de usuários consulta de usuário e verificação de login.
+ * @author Leandro
+ * 
  */
 
 import java.sql.ResultSet;
@@ -42,22 +43,22 @@ public class UserDao {
         String nome = "";
         int idade = 0;
         String cidade = "";
-        try{
+        try {
             result = conexao.executarConsulta(sql);
-            if (result.next()){
+            if (result.next()) {
                 try {
-                id = result.getInt("id");
-                nome = result.getString("nome");
-                idade = result.getInt("idade");
-                cidade = result.getString("cidade");
+                    id = result.getInt("id");
+                    nome = result.getString("nome");
+                    idade = result.getInt("idade");
+                    cidade = result.getString("cidade");
                 } catch (Exception e) {
-                System.out.println("Erro" + e.getMessage());
+                    System.out.println("Erro" + e.getMessage());
                 }
-            }else{
-            System.out.println("erro");
+            } else {
+                System.out.println("erro");
             }
-        }catch (Exception e ){
-            System.out.println("Erro "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Erro " + e.getMessage());
         }
         ArrayList<String> resultado = new ArrayList<>();
         resultado.add(Integer.toString(id));
@@ -67,5 +68,5 @@ public class UserDao {
 
         return resultado;
     }
-    
+
 }

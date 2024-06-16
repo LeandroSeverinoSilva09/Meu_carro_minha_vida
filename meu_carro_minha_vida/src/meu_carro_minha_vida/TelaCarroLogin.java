@@ -8,7 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.DimensionUIResource;
 
 /**
- *
+ * Essa tela serve para fazer login com seu veiculo a partir da placa dele.
+ * 
  * @author Leandro
  */
 public class TelaCarroLogin extends javax.swing.JFrame {
@@ -218,7 +219,8 @@ public class TelaCarroLogin extends javax.swing.JFrame {
                         telaSelecao.setVisible(true);
                 } else {
                         System.out.println("Carro inexistente");
-                        JOptionPane.showMessageDialog(null, "Carro não encontrado ou \nnão pertencente ao usuário", "Erro",
+                        JOptionPane.showMessageDialog(null, "Carro não encontrado ou \nnão pertencente ao usuário",
+                                        "Erro",
                                         JOptionPane.ERROR_MESSAGE);
 
                 }

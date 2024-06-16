@@ -5,8 +5,8 @@
 package meu_carro_minha_vida;
 
 /**
- *
- * @author leandro
+ * Essa classe realiza a conexão com o banco de dados e tem metódos para poder executar colsultas e comandos no banco de dados.
+ * @author Leandro
  */
 
 import java.sql.Connection;

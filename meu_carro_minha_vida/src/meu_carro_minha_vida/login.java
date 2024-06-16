@@ -5,7 +5,8 @@
 package meu_carro_minha_vida;
 
 /**
- *
+ * Classe para construir o objeto usuário.
+ * 
  * @author Leandro
  */
 public class Login {
