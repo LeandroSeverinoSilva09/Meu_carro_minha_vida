@@ -10,22 +10,28 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- *
+ * Essa Classe serve Para fazer conexão entre o veículo e o banco de dados,
+ * permite cadastrar um novo veículo, fazer consulta de dados do veículo e
+ * verificar se o veículo existe através da placa
+ * 
  * @author Pedro
+ * @author Leandro
  */
 
 public class CarroDao {
     ConexaoBD conexao = ConexaoBD.getInstance();
 
     public void cadastroCarro(String marca, String modelo, int kmRodado, float valorFipe, int ano, String placa) {
-        String sql = "INSERT INTO veiculo (marca, modelo, km_rodado, valor_fipe, ano_veiculo, placa, id_user) VALUES ('" + marca
-                + "', '" + modelo + "', '" + kmRodado + "', '" + valorFipe + "', '" + ano + "', '" + placa + "', '"+Dados.getIdUser()+"');";
+        String sql = "INSERT INTO veiculo (marca, modelo, km_rodado, valor_fipe, ano_veiculo, placa, id_user) VALUES ('"
+                + marca
+                + "', '" + modelo + "', '" + kmRodado + "', '" + valorFipe + "', '" + ano + "', '" + placa + "', '"
+                + Dados.getIdUser() + "');";
         conexao.executarSQL(sql);
 
     }
 
     public boolean verificarplaca(String placa) throws SQLException {
-        String sql = "SELECT placa FROM veiculo WHERE placa = '" + placa + "' and id_user = "+Dados.getIdUser()+";";
+        String sql = "SELECT placa FROM veiculo WHERE placa = '" + placa + "' and id_user = " + Dados.getIdUser() + ";";
         ResultSet resultado = null;
         resultado = conexao.executarConsulta(sql);
         if (resultado.next()) {
@@ -48,9 +54,9 @@ public class CarroDao {
         int ano = 0;
         String placaBD = "";
 
-        try{
+        try {
             result = conexao.executarConsulta(sql);
-            if (result.next()){
+            if (result.next()) {
                 try {
                     marca = result.getString("marca");
                     modelo = result.getString("modelo");
@@ -62,7 +68,7 @@ public class CarroDao {
                     System.out.println("Erro" + e.getMessage());
                 }
             }
-        } catch (Exception e ){
+        } catch (Exception e) {
             System.out.println("Erro " + e.getMessage());
         }
 
