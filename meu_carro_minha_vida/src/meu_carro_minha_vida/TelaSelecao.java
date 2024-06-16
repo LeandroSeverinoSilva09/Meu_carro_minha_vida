@@ -7,7 +7,7 @@ package meu_carro_minha_vida;
 import javax.swing.plaf.DimensionUIResource;
 
 /**
- *
+ * A tela de selcção serva para o usuario selecioar qual opção deseja seguir, sendo ela qual combustível compensa mais para ser abastecido ou saber qual será o custo da manutenção do seu automóvel.
  * @author Jõao
  */
 public class TelaSelecao extends javax.swing.JFrame {
